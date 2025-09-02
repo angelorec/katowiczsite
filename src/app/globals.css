@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 20% 6%; /* Roxo escuro para o fundo */
+    --foreground: 0 0% 98%; /* Texto quase branco */
+    --card: 260 20% 9%; /* Cartões um pouco mais claros que o fundo */
+    --card-foreground: 0 0% 98%;
+    --popover: 260 20% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 300 85% 75%; /* Rosa/Roxo claro para elementos primários */
+    --primary-foreground: 260 20% 6%;
+    --secondary: 320 100% 80%; /* Rosa vibrante para elementos secundários */
+    --secondary-foreground: 260 20% 6%;
+    --muted: 260 20% 12%; /* Cor suave para elementos discretos */
+    --muted-foreground: 260 10% 60%;
+    --accent: 320 100% 80%; /* Mesma cor do secundário para destaque */
+    --accent-foreground: 260 20% 6%;
+    --destructive: 0 72% 51%; /* Vermelho para ações destrutivas */
+    --destructive-foreground: 0 0% 98%;
+    --border: 260 20% 15%; /* Bordas sutis */
+    --input: 260 20% 15%;
+    --ring: 300 85% 75%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 260 20% 6%;
+    --foreground: 0 0% 98%;
+    --card: 260 20% 9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 260 20% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 300 85% 75%;
+    --primary-foreground: 260 20% 6%;
+    --secondary: 320 100% 80%;
+    --secondary-foreground: 260 20% 6%;
+    --muted: 260 20% 12%;
+    --muted-foreground: 260 10% 60%;
+    --accent: 320 100% 80%;
+    --accent-foreground: 260 20% 6%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 260 20% 15%;
+    --input: 260 20% 15%;
+    --ring: 300 85% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
