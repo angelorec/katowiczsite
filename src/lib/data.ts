@@ -411,17 +411,17 @@ const newPosts: Post[] = [
 
 const newVideos: Post[] = [
   {
-    id: 'video-test-1',
+    id: 'video-1',
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/M643CITS#Glb3la8gaZSeC18BKJz9NA71V1lFAB3OZU6mbp7npio!1a',
+    mediaUrl: 'https://mega.nz/embed/F3ARUKrA#2J9IeOQ6bUDC02w3p4mCLvutXiEz9vs05PvB-NxRwzE!1a',
     caption: '',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
-      { user: 'mateus_s', text: 'Meu Deus, não sei se assisto ou me escondo 💀' },
-      { user: 'rafa_g', text: 'Tá impossível de resistir… 😈' },
-      { user: 'igor_m', text: 'Quem aguenta tanta tentação assim? 🥶' }
+      { user: 'pedro_g', text: 'Meu Deus, não sei se assisto ou me escondo 💀' },
+      { user: 'andre_b', text: 'Tá impossível de resistir… 😈' },
+      { user: 'thiago_r', text: 'Quem aguenta tanta tentação assim? 🥶' }
     ]
   },
   {
@@ -429,7 +429,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/J3xACSwb#UVXBnBSTJKE_uyrXhsdyGmwmY6VdycTaTXrtuG67Ekk',
+    mediaUrl: 'https://mega.nz/embed/M643CITS#Glb3la8gaZSeC18BKJz9NA71V1lFAB3OZU6mbp7npio!1a',
     caption: '🔥 Fazendo todo mundo suar 😈',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -443,7 +443,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/97YBiTIL#lj2lVT8fzk147o5Cp4wwWqVtmjVxyQlEsCyVZRfeq38',
+    mediaUrl: 'https://mega.nz/embed/cqoCiBRB#IakhHa3RQvj_KAsddNLLkGv7nbZalsa5nH8wh1b1UI8!1a',
     caption: '',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -457,7 +457,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/di4XELBa#WjBeLNv0fnOekuvLMdWROmy0gFLb7vSk_kB6FLvmJdY',
+    mediaUrl: 'https://mega.nz/embed/J3xACSwb#UVXBnBSTJKE_uyrXhsdyGmwmY6VdycTaTXrtuG67Ekk!1a',
     caption: '😇 Pareço santa, mas olha só… 😈',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -471,7 +471,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/IqhlEAAT#53rRsp8tqZnMC-EpckZnBM1lRS0aGcbJz5K0mUgbsiQ',
+    mediaUrl: 'https://mega.nz/embed/97YBiTIL#lj2lVT8fzk147o5Cp4wwWqVtmjVxyQlEsCyVZRfeq38!1a',
     caption: '🔥 Mexendo com desejos que você nem sabia que tinha 😈',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -485,7 +485,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/NrokRT6a#sbTP-6cDjcY6-v9i6s0AX0tFi7ixTt_IQRbzvJro1xw',
+    mediaUrl: 'https://mega.nz/embed/Qq4gQCoJ#QqBehsIYjTISRlmduOvzAMw_4GKZ2EuSdDJmy7uIt6M!1a',
     caption: '🥵 Tentação em movimento',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -499,7 +499,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/Z35yEADS#ypvXRSLFwMa518YTwIbRfUOdLAx5MvFtFXNCE3KS0F0',
+    mediaUrl: 'https://mega.nz/embed/di4XELBa#WjBeLNv0fnOekuvLMdWROmy0gFLb7vSk_kB6FLvmJdY!1a',
     caption: '😈 Provocando até quem jurava que não se impressionava',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -513,7 +513,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/srgzRALT#dIshKINEQCB_mYSlg8ERc1HksisM4NZBdJRDthWncNk',
+    mediaUrl: 'https://mega.nz/embed/IqhlEAAT#53rRsp8tqZnMC-EpckZnBM1lRS0aGcbJz5K0mUgbsiQ!1a',
     caption: '',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -527,7 +527,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/RnBzWKRS#koxXbKRItd9PCJRm_FZXhG2HlXD2-El2YiBlkiSpeug',
+    mediaUrl: 'https://mega.nz/embed/5mQAFLrI#O00uRhfwj8JfFFJ4T2Z5x9GZgh7Fh13Wa0ag9AHcvr0!1a',
     caption: '',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -541,7 +541,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/N3RWkYrK#yaMfLjXrPe8LpbdhxnqxonJji8beYCRFRU3j7sfsVr4',
+    mediaUrl: 'https://mega.nz/embed/IqhlEAAT#53rRsp8tqZnMC-EpckZnBM1lRS0aGcbJz5K0mUgbsiQ!1a',
     caption: '😈 Jogando charme e caos em doses iguais',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -555,7 +555,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/Rrh1GCKR#LP6VLCYTWzh6rTbUugdb6Wqb2TXND31ieVX06JO6VtY',
+    mediaUrl: 'https://mega.nz/embed/NrokRT6a#sbTP-6cDjcY6-v9i6s0AX0tFi7ixTt_IQRbzvJro1xw!1a',
     caption: '🥵 Mexendo com desejos proibidos',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -569,7 +569,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/QnIAkTiL#5pLbD1wk8RjMUzgJFS2Scys3lcPlAIxpTrPfxUNU8F0',
+    mediaUrl: 'https://mega.nz/embed/Z35yEADS#ypvXRSLFwMa518YTwIbRfUOdLAx5MvFtFXNCE3KS0F0!1a',
     caption: '',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -583,7 +583,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/ZjAziSpL#Gk8acHaej8sPRkNpEpCmUIgvMcq0bog3HJzYPtovbvo',
+    mediaUrl: 'https://mega.nz/embed/srgzRALT#dIshKINEQCB_mYSlg8ERc1HksisM4NZBdJRDthWncNk!1a',
     caption: '🔥 Fazendo qualquer um perder o controle',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -597,7 +597,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/l6AXTByI#C5Kbsf74Ybk3c-y1Hs3RhpUm0qGYJi6PntbXd_EcbFk',
+    mediaUrl: 'https://mega.nz/embed/RnBzWKRS#koxXbKRItd9PCJRm_FZXhG2HlXD2-El2YiBlkiSpeug!1a',
     caption: '😈 Sedução sem limites',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -611,7 +611,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/ZjxkCSRB#Iy8cbd6N5MTbUPlcgyP8_ux2nxYzMJCRMdqeDP3eFFw',
+    mediaUrl: 'https://mega.nz/embed/N3RWkYrK#yaMfLjXrPe8LpbdhxnqxonJji8beYCRFRU3j7sfsVr4!1a',
     caption: '🥶 O frio na espinha é real',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -625,7 +625,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/k3hjWALb#hQ1xjxrECi4eHmzXgmKiWD8FxOyiyhkcBCG7P2e_CrY',
+    mediaUrl: 'https://mega.nz/embed/Rrh1GCKR#LP6VLCYTWzh6rTbUugdb6Wqb2TXND31ieVX06JO6VtY!1a',
     caption: '',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -639,7 +639,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/F3ARUKrA#2J9IeOQ6bUDC02w3p4mCLvutXiEz9vs05PvB-NxRwzE',
+    mediaUrl: 'https://mega.nz/embed/QnIAkTiL#5pLbD1wk8RjMUzgJFS2Scys3lcPlAIxpTrPfxUNU8F0!1a',
     caption: '🔥 Provocando desde o primeiro segundo',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -653,7 +653,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/cqoCiBRB#IakhHa3RQvj_KAsddNLLkGv7nbZalsa5nH8wh1b1UI8',
+    mediaUrl: 'https://mega.nz/embed/ZjAziSpL#Gk8acHaej8sPRkNpEpCmUIgvMcq0bog3HJzYPtovbvo!1a',
     caption: '',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -667,7 +667,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/Qq4gQCoJ#QqBehsIYjTISRlmduOvzAMw_4GKZ2EuSdDJmy7uIt6M',
+    mediaUrl: 'https://mega.nz/embed/l6AXTByI#C5Kbsf74Ybk3c-y1Hs3RhpUm0qGYJi6PntbXd_EcbFk!1a',
     caption: '',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -681,7 +681,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/U3BGnaRI#BQT9oYQNoqmcvXCZ7TxsAMEsHH8Ez2Z5ciUhorLWwqg',
+    mediaUrl: 'https://mega.nz/embed/ZjxkCSRB#Iy8cbd6N5MTbUPlcgyP8_ux2nxYzMJCRMdqeDP3eFFw!1a',
     caption: '😇 Enganosa? Só na aparência 😈',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -695,7 +695,7 @@ const newVideos: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/5mQAFLrI#O00uRhfwj8JfFFJ4T2Z5x9GZgh7Fh13Wa0ag9AHcvr0',
+    mediaUrl: 'https://mega.nz/embed/k3hjWALb#hQ1xjxrECi4eHmzXgmKiWD8FxOyiyhkcBCG7P2e_CrY!1a',
     caption: '',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
@@ -713,7 +713,7 @@ const existingPosts: Post[] = [
     author: 'Natalia Katowicz',
     avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
     type: 'video',
-    mediaUrl: 'https://mega.nz/embed/srgzRALT#dIshKINEQCB_mYSlg8ERc1HksisM4NZBdJRDthWncNk',
+    mediaUrl: 'https://mega.nz/embed/srgzRALT#dIshKINEQCB_mYSlg8ERc1HksisM4NZBdJRDthWncNk!1a',
     caption: '😈 Cuidado, perigo de calor extremo 🥵',
     likes: Math.floor(Math.random() * 5000) + 200,
     comments: [
