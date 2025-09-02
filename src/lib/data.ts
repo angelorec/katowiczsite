@@ -1,5 +1,20 @@
 import type { Post } from '@/lib/types';
 
+const firstPost: Post = {
+  id: 'video-bunny-1',
+  author: 'Natalia Katowicz',
+  avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
+  type: 'video',
+  mediaUrl: 'https://iframe.mediadelivery.net/play/489405/94bdea73-2211-4200-849c-fc22e04e4cbc',
+  caption: '',
+  likes: Math.floor(Math.random() * 5000) + 200,
+  comments: [
+    { user: 'pedro_g', text: 'Meu Deus, não sei se assisto ou me escondo 💀' },
+    { user: 'andre_b', text: 'Tá impossível de resistir… 😈' },
+    { user: 'thiago_r', text: 'Quem aguenta tanta tentação assim? 🥶' }
+  ]
+};
+
 const newPosts: Post[] = [
   {
     id: 'post-new-1',
@@ -724,7 +739,7 @@ const existingPosts: Post[] = [
   }
 ];
 
-const posts: Post[] = [...newPosts, ...newVideos, ...existingPosts];
+const posts: Post[] = [firstPost, ...newPosts, ...newVideos, ...existingPosts];
 
 
 export async function getPosts(): Promise<Post[]> {

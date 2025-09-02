@@ -51,6 +51,7 @@ export function PostCard({ post }: PostCardProps) {
   }
 
   const isMegaVideo = post.type === 'video' && post.mediaUrl.includes('mega.nz/embed');
+  const isBunnyVideo = post.type === 'video' && post.mediaUrl.includes('iframe.mediadelivery.net');
 
   return (
     <Card className="w-full overflow-hidden rounded-lg border-none shadow-lg bg-card">
@@ -81,6 +82,16 @@ export function PostCard({ post }: PostCardProps) {
                 src={post.mediaUrl}
                 width="100%" 
                 height="100%" 
+                frameBorder="0"
+                allowFullScreen
+              ></iframe>
+            </div>
+        ) : isBunnyVideo ? (
+            <div className="aspect-video w-full">
+              <iframe 
+                src={post.mediaUrl}
+                width="640" 
+                height="360" 
                 frameBorder="0"
                 allowFullScreen
               ></iframe>
