@@ -54,8 +54,8 @@ export function PostCard({ post }: PostCardProps) {
   const isBunnyVideo = post.type === 'video' && post.mediaUrl.includes('iframe.mediadelivery.net');
 
   return (
-    <Card className="w-full overflow-hidden rounded-lg border-none shadow-lg bg-card">
-      <CardHeader className="flex flex-row items-center gap-3 p-3">
+    <Card className="w-full overflow-hidden rounded-lg border-none shadow-lg bg-card mx-2 sm:mx-0">
+      <CardHeader className="flex flex-row items-center gap-3 p-3 pb-2">
         <Avatar className="h-8 w-8">
           <AvatarImage src={post.avatarUrl} alt={post.author} />
           <AvatarFallback>{post.author.substring(0, 2)}</AvatarFallback>
@@ -77,22 +77,18 @@ export function PostCard({ post }: PostCardProps) {
             data-ai-hint="fashion style"
           />
         ) : isMegaVideo ? (
-            <div className="aspect-video w-full">
+            <div className="aspect-video w-full bg-black">
               <iframe 
                 src={post.mediaUrl}
-                width="100%" 
-                height="100%" 
-                frameBorder="0"
+                className="w-full h-full"
                 allowFullScreen
               ></iframe>
             </div>
         ) : isBunnyVideo ? (
-            <div className="aspect-video w-full">
+            <div className="aspect-video w-full bg-black">
               <iframe 
                 src={post.mediaUrl}
-                width="640" 
-                height="360" 
-                frameBorder="0"
+                className="w-full h-full"
                 allowFullScreen
               ></iframe>
             </div>
@@ -112,7 +108,7 @@ export function PostCard({ post }: PostCardProps) {
           </div>
         )}
       </CardContent>
-      <CardFooter className="flex flex-col items-start gap-2 p-4">
+      <CardFooter className="flex flex-col items-start gap-2 p-3 pt-2">
         <div className="flex w-full items-center">
           <div className="flex gap-4">
             <button onClick={handleLikeClick}>
@@ -130,39 +126,39 @@ export function PostCard({ post }: PostCardProps) {
             <Bookmark className="h-6 w-6" />
           </button>
         </div>
-        <div className="text-sm font-semibold">{likes.toLocaleString()} likes</div>
-        <div className="text-sm w-full space-y-2">
+        <div className="text-sm font-semibold px-1">{likes.toLocaleString()} likes</div>
+        <div className="text-sm w-full space-y-1 px-1">
             <div>
                 <span className="font-bold mr-1">{post.author}</span>
                 <span>{post.caption}</span>
             </div>
             {comments.length > 2 && (
-                 <button className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                 <button className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                     Ver todos os {comments.length} comentários
                 </button>
             )}
-            <div className="w-full space-y-2 text-sm">
+            <div className="w-full space-y-1 text-sm">
                 {comments.slice(0,2).map((comment, index) => (
-                    <div key={index} className="flex gap-2">
+                    <div key={index} className="flex gap-2 text-xs sm:text-sm">
                         <span className="font-bold shrink-0">{comment.user}</span>
-                        <span>{comment.text}</span>
+                        <span className="break-words">{comment.text}</span>
                     </div>
                 ))}
             </div>
         </div>
         
-        <Separator className="my-2 bg-border/50"/>
+        <Separator className="my-1 bg-border/50"/>
 
-        <form onSubmit={handleCommentSubmit} className="w-full flex items-center gap-2">
+        <form onSubmit={handleCommentSubmit} className="w-full flex items-center gap-2 px-1">
             <Input 
                 ref={commentInputRef}
                 type="text"
                 placeholder="Adicione um comentário..."
-                className="bg-transparent border-none focus-visible:ring-0 text-sm h-8 p-0"
+                className="bg-transparent border-none focus-visible:ring-0 text-xs sm:text-sm h-8 p-0"
                 value={newComment}
                 onChange={(e) => setNewComment(e.target.value)}
             />
-            <Button type="submit" variant="ghost" size="sm" disabled={!newComment.trim()} className="text-primary hover:text-primary">
+            <Button type="submit" variant="ghost" size="sm" disabled={!newComment.trim()} className="text-primary hover:text-primary text-xs sm:text-sm">
                 Publicar
             </Button>
         </form>

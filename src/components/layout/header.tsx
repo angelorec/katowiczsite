@@ -35,7 +35,7 @@ function TiktokIcon(props: React.SVGProps<SVGSVGElement>) {
 export default function Header() {
   return (
     <header className="w-full">
-      <div className="relative h-48 md:h-64 w-full">
+      <div className="relative h-40 sm:h-48 md:h-64 w-full">
         <Image 
           src="https://i.imgur.com/iu9YXXA.jpeg" 
           alt="Foto de capa com tema Kuromi" 
@@ -45,33 +45,33 @@ export default function Header() {
           data-ai-hint="cartoon character collage"
         />
       </div>
-      <div className="container max-w-2xl mx-auto px-4 pb-4">
-        <div className="flex justify-center -mt-16 md:-mt-20">
-          <Avatar className="h-28 w-28 md:h-36 md:w-36 border-4 border-background">
+      <div className="container max-w-2xl mx-auto px-2 sm:px-4 pb-4">
+        <div className="flex justify-center -mt-12 sm:-mt-16 md:-mt-20">
+          <Avatar className="h-20 w-20 sm:h-28 sm:w-28 md:h-36 md:w-36 border-4 border-background">
             <AvatarImage src="https://i.imgur.com/JFb3R8k.jpeg" alt="Natália Katowicz" data-ai-hint="woman selfie" className="object-cover" />
             <AvatarFallback>NK</AvatarFallback>
           </Avatar>
         </div>
 
-        <div className="text-center pt-4">
-            <h1 className="font-headline text-4xl text-white">Natália Katowicz</h1>
-            <p className="text-sm text-muted-foreground pt-1">
+        <div className="text-center pt-2 sm:pt-4">
+            <h1 className="font-headline text-2xl sm:text-3xl md:text-4xl text-white">Natália Katowicz</h1>
+            <p className="text-xs sm:text-sm text-muted-foreground pt-1">
                 She/Her 💜 Gamer, streamer & e-girl.
             </p>
-            <p className="text-sm text-muted-foreground">Bem-vindo ao meu universo! ✨</p>
+            <p className="text-xs sm:text-sm text-muted-foreground">Bem-vindo ao meu universo! ✨</p>
         </div>
 
-        <nav className="flex items-center justify-center gap-4 py-4">
+        <nav className="flex items-center justify-center gap-3 sm:gap-4 py-3 sm:py-4">
             <a href="https://www.instagram.com/natkatowicz/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Instagram className="h-6 w-6" />
+                <Instagram className="h-5 w-5 sm:h-6 sm:w-6" />
                 <span className="sr-only">Instagram</span>
             </a>
             <a href="https://x.com/vitacelestine" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter className="h-6 w-6" />
+                <Twitter className="h-5 w-5 sm:h-6 sm:w-6" />
                 <span className="sr-only">Twitter</span>
             </a>
             <a href="https://www.tiktok.com/@vitacelestine?lang=pt" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <TiktokIcon className="h-6 w-6" />
+                <TiktokIcon className="h-5 w-5 sm:h-6 sm:w-6" />
                 <span className="sr-only">TikTok</span>
             </a>
         </nav>

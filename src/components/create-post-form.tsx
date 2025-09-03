@@ -77,14 +77,14 @@ export function CreatePostForm() {
   return (
     <>
       <form action={formAction} ref={formRef}>
-        <CardContent className="grid gap-6">
+        <CardContent className="grid gap-4 sm:gap-6">
           <div className="flex flex-col sm:flex-row gap-4 items-start">
             <Image
               src="https://picsum.photos/seed/create/128/128"
-              width={128}
-              height={128}
+              width={96}
+              height={96}
               alt="placeholder"
-              className="rounded-lg object-cover aspect-square"
+              className="rounded-lg object-cover aspect-square sm:w-32 sm:h-32 mx-auto sm:mx-0"
               data-ai-hint="fashion accessory"
             />
             <div className="w-full space-y-2">
@@ -95,7 +95,7 @@ export function CreatePostForm() {
                 placeholder="Ex: mulher sorrindo, usando vestido rosa, em um campo de flores ao pôr do sol..."
                 rows={5}
                 required
-                className={cn(state.errors?.description && "border-destructive")}
+                className={cn("text-sm", state.errors?.description && "border-destructive")}
               />
               {state.errors?.description && (
                 <p className="text-sm text-destructive">{state.errors.description[0]}</p>
@@ -109,17 +109,17 @@ export function CreatePostForm() {
       </form>
       
       {hasSuggestions && (
-        <div className="px-6 pb-6">
+        <div className="px-4 sm:px-6 pb-4 sm:pb-6">
             <Separator className="my-4" />
             <div className="space-y-4">
-                <h3 className="text-lg font-headline flex items-center gap-2 text-primary">
+                <h3 className="text-base sm:text-lg font-headline flex items-center gap-2 text-primary">
                     <Bot className="h-5 w-5"/>
                     Sugestões da IA
                 </h3>
                 {state.caption && (
                     <div className="space-y-2">
-                        <Label className="font-bold">Legenda Sugerida</Label>
-                        <div className="flex items-start gap-2 rounded-md border p-3 bg-card">
+                        <Label className="font-bold text-sm">Legenda Sugerida</Label>
+                        <div className="flex items-start gap-2 rounded-md border p-2 sm:p-3 bg-card">
                             <p className="flex-1 text-sm">{state.caption}</p>
                             <CopyButton textToCopy={state.caption} />
                         </div>
@@ -127,8 +127,8 @@ export function CreatePostForm() {
                 )}
                 {state.hashtags && (
                     <div className="space-y-2">
-                        <Label className="font-bold">Hashtags Sugeridas</Label>
-                         <div className="flex items-start gap-2 rounded-md border p-3 bg-card">
+                        <Label className="font-bold text-sm">Hashtags Sugeridas</Label>
+                         <div className="flex items-start gap-2 rounded-md border p-2 sm:p-3 bg-card">
                             <p className="flex-1 text-sm text-accent">{state.hashtags}</p>
                             <CopyButton textToCopy={state.hashtags} />
                         </div>
