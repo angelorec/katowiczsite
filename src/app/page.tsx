@@ -24,8 +24,3 @@ export default async function Home() {
     </AuthCheck>
   );
 }
-        </div>
-      </main>
-    </div>
-  );
-}
