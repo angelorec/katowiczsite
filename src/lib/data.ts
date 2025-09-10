@@ -312,50 +312,6 @@ const firstPost: Post = {
   ]
 };
 
-const additionalPosts: Post[] = [
-  {
-    id: 'post-additional-1',
-    author: 'Natalia Katowicz',
-    avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
-    type: 'image',
-    mediaUrl: 'https://imgbox.com/EVQyx3wA',
-    caption: '',
-    likes: Math.floor(Math.random() * 5000) + 200,
-    comments: [
-      { user: 'carlos_m', text: 'pézinhos lindossss 😵‍💫' },
-      { user: 'rodrigo_s', text: 'Socorro, tô derretendo' },
-      { user: 'felipe_r', text: 'que isso ein 💀' },
-    ]
-  },
-  {
-    id: 'post-additional-2',
-    author: 'Natalia Katowicz',
-    avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
-    type: 'image',
-    mediaUrl: 'https://imgbox.com/fZS4nIuW',
-    caption: '',
-    likes: Math.floor(Math.random() * 5000) + 200,
-    comments: [
-      { user: 'bruno_l', text: 'Que escultura de mulher!!!' },
-      { user: 'diego_p', text: 'Tu brinca de ser gostosa em pae' },
-      { user: 'lucas_t', text: 'que isso ein' },
-    ]
-  },
-  {
-    id: 'post-additional-3',
-    author: 'Natalia Katowicz',
-    avatarUrl: 'https://i.imgur.com/JFb3R8k.jpeg',
-    type: 'image',
-    mediaUrl: 'https://imgbox.com/aFWhFw20',
-    caption: '',
-    likes: Math.floor(Math.random() * 5000) + 200,
-    comments: [
-      { user: 'andre_k', text: 'sempre gostosissima' },
-      { user: 'mateus_v', text: 'O la em casaaaaaaa' },
-      { user: 'thiago_n', text: 'bem demaisss' },
-    ]
-  }
-];
 const newPosts: Post[] = [
   {
     id: 'post-new-1',
@@ -768,7 +724,7 @@ const newPosts: Post[] = [
 
 
 
-const posts: Post[] = [firstPost, ...videosPosts, ...newPosts, ...additionalPosts];
+const posts: Post[] = [firstPost, ...videosPosts, ...newPosts];
 
 
 export async function getPosts(): Promise<Post[]> {
