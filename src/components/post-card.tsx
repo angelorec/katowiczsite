@@ -73,7 +73,7 @@ export function PostCard({ post }: PostCardProps) {
             width={600}
             height={750}
             className="w-full object-cover aspect-[4/5]"
-            priority={parseInt(post.id.split('-')[1]) <= 3} // Prioritize loading first 3 images
+            priority={parseInt(post.id.split('-').pop() || "0") <= 3} // Prioritize loading first 3 images
             data-ai-hint="fashion style"
           />
         ) : isMegaVideo ? (

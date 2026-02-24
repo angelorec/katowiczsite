@@ -9,9 +9,11 @@ import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Loader2 } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState(0);
   const router = useRouter();
@@ -19,24 +21,27 @@ export default function LoginPage() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!email.trim()) return;
+    if (!email.trim() || !password.trim()) return;
 
     setIsLoading(true);
     setProgress(0);
 
-    // Simulate progress over 5 seconds
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          // Store email in localStorage and redirect
-          localStorage.setItem('userEmail', email);
-          router.push('/');
-          return 100;
-        }
-        return prev + 2; // Increment by 2% every 100ms (5 seconds total)
+    const { data, error } = await supabase.auth.signInWithPassword({
+        email: email,
+        password: password,
       });
-    }, 100);
+  
+      if (error) {
+        alert(error.message);
+        setIsLoading(false);
+        return;
+      }
+  
+      if (data.user) {
+        localStorage.setItem('userEmail', email);
+        router.push('/');
+      }
+
   };
 
   return (
@@ -65,7 +70,7 @@ export default function LoginPage() {
             <form onSubmit={handleLogin} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-center block font-medium">
-                  Coloque seu e-mail de pagamento
+                  E-mail
                 </Label>
                 <Input
                   id="email"
@@ -73,6 +78,21 @@ export default function LoginPage() {
                   placeholder="seu@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  required
+                  disabled={isLoading}
+                  className="text-center"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="password" className="text-center block font-medium">
+                  Senha
+                </Label>
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="********"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   required
                   disabled={isLoading}
                   className="text-center"
@@ -100,10 +120,10 @@ export default function LoginPage() {
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Gerando Login...
+                    Acessando...
                   </>
                 ) : (
-                  'Gerar Login'
+                  'Acessar'
                 )}
               </Button>
             </form>
