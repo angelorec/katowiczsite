@@ -26,35 +26,24 @@ export default function LoginPage() {
     setProgress(0);
 
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: email,
-        password: password,
-      });
+      const { data: approvedUser, error } = await supabase
+        .from('approved_users')
+        .select('email')
+        .eq('email', email)
+        .eq('password', password) // Direct password comparison
+        .single();
 
-      if (error) {
-        // Handle Supabase-specific auth errors (e.g., invalid credentials)
-        alert(error.message);
+      if (error || !approvedUser) {
+        // This will now catch both query errors and cases where no user is found
+        alert('Credenciais inválidas. Verifique seu e-mail e senha.');
         setIsLoading(false);
         return;
       }
 
-      if (data.user) {
-        const { data: approvedUser, error: approvedUserError } = await supabase
-          .from('approved_users')
-          .select('email')
-          .eq('email', email)
-          .single();
+      // If we are here, the user is authenticated against the custom table
+      localStorage.setItem('userEmail', email);
+      router.push('/');
 
-        if (approvedUserError || !approvedUser) {
-          await supabase.auth.signOut();
-          alert('Usuário não autorizado. Entre em contato com o suporte.');
-          setIsLoading(false);
-          return;
-        }
-
-        localStorage.setItem('userEmail', email);
-        router.push('/');
-      }
     } catch (error: any) {
       // Handle network errors or other unexpected errors
       if (error.message.includes('Failed to fetch')) {
