@@ -1,7 +1,18 @@
 # Settings to manage and configure a Firebase App Hosting backend.
 # https://firebase.google.com/docs/app-hosting/configure
 
+buildConfig:
+  env:
+    - variable: NEXT_PUBLIC_SUPABASE_URL
+      value: $$__SECRET_NEXT_PUBLIC_SUPABASE_URL
+    - variable: NEXT_PUBLIC_SUPABASE_ANON_KEY
+      value: $$__SECRET_NEXT_PUBLIC_SUPABASE_ANON_KEY
 runConfig:
+  env:
+    - variable: NEXT_PUBLIC_SUPABASE_URL
+      value: $$__SECRET_NEXT_PUBLIC_SUPABASE_URL
+    - variable: NEXT_PUBLIC_SUPABASE_ANON_KEY
+      value: $$__SECRET_NEXT_PUBLIC_SUPABASE_ANON_KEY
   # Increase this value if you'd like to automatically spin up
   # more instances in response to increased traffic.
   maxInstances: 1

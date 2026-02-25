@@ -10,6 +10,7 @@ import { Progress } from '@/components/ui/progress';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Loader2 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import bcrypt from 'bcryptjs';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -23,6 +24,12 @@ export default function LoginPage() {
     e.preventDefault();
     if (!email.trim() || !password.trim()) return;
 
+    // If Supabase is not configured, show an error and stop
+    if (!supabase) {
+      setErrorMessage('A configuração do Supabase está ausente. O login não está disponível no preview.');
+      return;
+    }
+
     setIsLoading(true);
     setErrorMessage(''); // Clear previous errors
     setProgress(0);
@@ -30,13 +37,19 @@ export default function LoginPage() {
     try {
       const { data: approvedUser, error } = await supabase
         .from('approved_users')
-        .select('email')
+        .select('*')
         .eq('email', email)
-        .eq('password', password) // Direct password comparison
         .single();
 
       if (error || !approvedUser) {
-        // Set custom error message instead of alert
+        setErrorMessage('E-mail e/ou Senha incorretos');
+        setIsLoading(false);
+        return;
+      }
+
+      const isMatch = bcrypt.compareSync(password, approvedUser.password);
+
+      if (!isMatch) {
         setErrorMessage('E-mail e/ou Senha incorretos');
         setIsLoading(false);
         return;
