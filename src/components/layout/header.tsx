@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
@@ -33,8 +36,25 @@ function TiktokIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export default function Header() {
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+
+  useEffect(() => {
+    // This code runs only on the client, after the component has mounted
+    const email = localStorage.getItem('userEmail');
+    if (email) {
+      setUserEmail(email);
+    }
+  }, []); // The empty array ensures this effect runs only once
+
   return (
-    <header className="w-full">
+    <header className="w-full relative"> {/* Added relative positioning */}
+      {/* Welcome Message */}
+      {userEmail && (
+        <div className="absolute top-2 right-4 text-xs text-muted-foreground bg-black/20 backdrop-blur-sm p-2 rounded-md">
+          Bem vindo, {userEmail}
+        </div>
+      )}
+
       <div className="relative h-40 sm:h-48 md:h-64 w-full">
         <Image 
           src="https://i.imgur.com/iu9YXXA.jpeg" 
@@ -48,7 +68,8 @@ export default function Header() {
       <div className="container max-w-2xl mx-auto px-2 sm:px-4 pb-4">
         <div className="flex justify-center -mt-12 sm:-mt-16 md:-mt-20">
           <Avatar className="h-20 w-20 sm:h-28 sm:w-28 md:h-36 md:w-36 border-4 border-background">
-            <AvatarImage src="https://i.imgur.com/JFb3R8k.jpeg" alt="Natália Katowicz" data-ai-hint="woman selfie" className="object-cover" />
+            {/* Updated Avatar Image */}
+            <AvatarImage src="https://i.imgur.com/HLgnwaj.jpeg" alt="Natália Katowicz" data-ai-hint="woman selfie" className="object-cover" />
             <AvatarFallback>NK</AvatarFallback>
           </Avatar>
         </div>

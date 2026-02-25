@@ -16,6 +16,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [errorMessage, setErrorMessage] = useState(''); // New state for error message
   const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -23,6 +24,7 @@ export default function LoginPage() {
     if (!email.trim() || !password.trim()) return;
 
     setIsLoading(true);
+    setErrorMessage(''); // Clear previous errors
     setProgress(0);
 
     try {
@@ -34,8 +36,8 @@ export default function LoginPage() {
         .single();
 
       if (error || !approvedUser) {
-        // This will now catch both query errors and cases where no user is found
-        alert('Credenciais inválidas. Verifique seu e-mail e senha.');
+        // Set custom error message instead of alert
+        setErrorMessage('E-mail e/ou Senha incorretos');
         setIsLoading(false);
         return;
       }
@@ -47,9 +49,9 @@ export default function LoginPage() {
     } catch (error: any) {
       // Handle network errors or other unexpected errors
       if (error.message.includes('Failed to fetch')) {
-        alert('Erro de conexão. Verifique sua internet ou as configurações do servidor.');
+        setErrorMessage('Erro de conexão. Verifique sua internet ou as configurações do servidor.');
       } else {
-        alert('Ocorreu um erro inesperado. Tente novamente.');
+        setErrorMessage('Ocorreu um erro inesperado. Tente novamente.');
       }
       console.error('Login error:', error);
       setIsLoading(false);
@@ -80,6 +82,13 @@ export default function LoginPage() {
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
+              {/* Error Message Popup */}
+              {errorMessage && (
+                <div className="bg-red-500/10 border border-red-500/30 text-red-500 text-sm text-center p-3 rounded-md">
+                  {errorMessage}
+                </div>
+              )}
+
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-center block font-medium">
                   E-mail
