@@ -63,7 +63,7 @@ export default function LoginPage() {
         {/* Profile Section */}
         <div className="text-center space-y-4">
           <Avatar className="h-24 w-24 mx-auto border-4 border-primary">
-            <AvatarImage src="https://i.imgur.com/JFb3R8k.jpeg" alt="Natália Katowicz" />
+            <AvatarImage src="https://i.imgur.com/HLgnwaj.jpeg" alt="Natália Katowicz" />
             <AvatarFallback>NK</AvatarFallback>
           </Avatar>
           <div>
