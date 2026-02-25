@@ -20,23 +20,24 @@ export default function LoginPage() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!email.trim() || !password.trim()) return;
 
     setIsLoading(true);
     setProgress(0);
 
-    const { data, error } = await supabase.auth.signInWithPassword({
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
         email: email,
         password: password,
       });
-  
+
       if (error) {
+        // Handle Supabase-specific auth errors (e.g., invalid credentials)
         alert(error.message);
         setIsLoading(false);
         return;
       }
-  
+
       if (data.user) {
         const { data: approvedUser, error: approvedUserError } = await supabase
           .from('approved_users')
@@ -54,7 +55,16 @@ export default function LoginPage() {
         localStorage.setItem('userEmail', email);
         router.push('/');
       }
-
+    } catch (error: any) {
+      // Handle network errors or other unexpected errors
+      if (error.message.includes('Failed to fetch')) {
+        alert('Erro de conexão. Verifique sua internet ou as configurações do servidor.');
+      } else {
+        alert('Ocorreu um erro inesperado. Tente novamente.');
+      }
+      console.error('Login error:', error);
+      setIsLoading(false);
+    }
   };
 
   return (
