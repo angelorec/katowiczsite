@@ -38,6 +38,19 @@ export default function LoginPage() {
       }
   
       if (data.user) {
+        const { data: approvedUser, error: approvedUserError } = await supabase
+          .from('approved_users')
+          .select('email')
+          .eq('email', email)
+          .single();
+
+        if (approvedUserError || !approvedUser) {
+          await supabase.auth.signOut();
+          alert('Usuário não autorizado. Entre em contato com o suporte.');
+          setIsLoading(false);
+          return;
+        }
+
         localStorage.setItem('userEmail', email);
         router.push('/');
       }
