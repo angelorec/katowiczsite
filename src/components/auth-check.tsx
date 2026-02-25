@@ -14,7 +14,7 @@ export function AuthCheck({ children }: AuthCheckProps) {
 
   useEffect(() => {
     const checkAuth = () => {
-      const userEmail = localStorage.getItem('userEmail');
+      const userEmail = sessionStorage.getItem('userEmail');
       
       if (!userEmail) {
         router.push('/login');

@@ -40,7 +40,7 @@ export default function Header() {
 
   useEffect(() => {
     // This code runs only on the client, after the component has mounted
-    const email = localStorage.getItem('userEmail');
+    const email = sessionStorage.getItem('userEmail');
     if (email) {
       setUserEmail(email);
     }

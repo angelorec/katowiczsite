@@ -56,7 +56,7 @@ export default function LoginPage() {
       }
 
       // If we are here, the user is authenticated against the custom table
-      localStorage.setItem('userEmail', email);
+      sessionStorage.setItem('userEmail', email);
       router.push('/');
 
     } catch (error: any) {
